@@ -5,3 +5,55 @@ For words in the even position, reverse the word and then do the same as the odd
 
 Eg - Key 2, input sentence "I am the King"
 Output K oc vjg ipkM'''
+
+def encode_sentence(sentence, key):
+    words = sentence.split()  # Split the sentence into words
+    encoded_words = []
+
+    for i, word in enumerate(words):
+        # Odd-positioned words
+        if i % 2 == 0:
+            encoded_word = ""
+            for letter in word:
+                if letter.isalpha():  # Only process letters
+                    shifted = ord(letter) + key
+                    if letter.islower():
+                        if shifted > ord('z'):
+                            shifted -= 26
+                    elif letter.isupper():
+                        if shifted > ord('Z'):
+                            shifted -= 26
+                    encoded_word += chr(shifted)
+                else:
+                    encoded_word += letter
+            encoded_words.append(encoded_word)
+        # Even-positioned words
+        else:
+            reversed_word = word[::-1]
+            encoded_word = ""
+            for letter in reversed_word:
+                if letter.isalpha():
+                    shifted = ord(letter) + key
+                    if letter.islower():
+                        if shifted > ord('z'):
+                            shifted -= 26
+                    elif letter.isupper():
+                        if shifted > ord('Z'):
+                            shifted -= 26
+                    encoded_word += chr(shifted)
+                else:
+                    encoded_word += letter
+            encoded_words.append(encoded_word)
+
+    encoded_sentence = " ".join(encoded_words)
+    return encoded_sentence
+
+# Test the function
+key = 2
+input_sentence = "I am the King"
+encoded_result = encode_sentence(input_sentence, key)
+print(encoded_result)
+
+
+'''OUTPUT:
+K oc vjg pggwS'''
