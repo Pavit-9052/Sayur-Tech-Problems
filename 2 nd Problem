@@ -1,1 +1,52 @@
+'''2. You are writing an essay. You don't want the any word to appear very frequently. Write a program that will take your essay as input (maybe from a file) and print the number of times each unique word appears in your essay.'''
+
+para="Repetition is when a single word or phrase is used multiple times in short succession for effect. It can help emphasise a point. For example, I have to practice my times tables over so I can learn them vs I have to practice my times tables over and over and over again so I can learn them."
+a=para.lower().split()
+dict={}
+for word in a:
+    if word in dict:
+        dict[word] += 1
+    else:
+        dict[word] = 1
+for key,value in dict.items():
+    print(f"{key}:{value}")
+
+
+''' OUTPUT:
+repetition:1
+is:2
+when:1
+a:2
+single:1
+word:1
+or:1
+phrase:1
+used:1
+multiple:1
+times:3
+in:1
+short:1
+succession:1
+for:2
+effect.:1
+it:1
+can:3
+help:1
+emphasise:1
+point.:1
+example,:1
+i:4
+have:2
+to:2
+practice:2
+my:2
+tables:2
+over:4
+so:2
+learn:2
+them:1
+vs:1
+and:2
+again:1
+them.:1'''
 
