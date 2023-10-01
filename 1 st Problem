@@ -9,32 +9,28 @@ output 9,28,14,7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1
 
 Get two numbers as input. Print the number that has less number of steps to reach 1.'''
 
-count_1=0
-count_2=0
+def least(num):
+    count=0
+    a=num
+    while num!=1:
+        if (num%2==0):
+            num=num/2
+            count+=1
+        elif(num %2 !=0):
+            num=(3*num)+1
+            count+=1
+    print(f"The step count of {a} is:",count)
+    return count
 n1=int(input("Enter the number 1:"))
 n2=int(input("Enter the number 2:"))
-a=n1
-b=n2
-while n1!=1:
-    if n1%2==0:
-        n1=n1/2
-        count_1+=1
-    elif(n1%2!=0):
-        n1=(3*n1)+1
-        count_1+=1
-print(f"The step count of {a} is:",count_1)
-while n2!=1:
-    if n2%2==0:
-        n2=n2/2
-        count_2+=1
-    elif(n2%2!=0):
-        n2=(3*n2)+1
-        count_2+=1
-print(f"The step count of {b} is:",count_2)
-if count_1 < count_2:
-    print(f"The number {a} has less step to reach 1" )
+x=least(n1)
+y=least(n2)
+if x < y:
+    print(f"The number {n1} has less step to reach 1")
 else:
-    print(f"The number {b} has less step to reach 1" )
+    print(f"The number {n2} has less step to reach 1")
+
+
 
 ''' OUTPUT:
 Enter the number 1:8
