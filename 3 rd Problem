@@ -1,0 +1,37 @@
+
+3. No need to write a program. Just pseudocode is enough.Define a class for a instagram post. Define the properties and functions.
+Define which one will be private and which one public.
+
+Class InstagramPost:
+    // Public Properties
+    Public username
+    Public caption
+    Public image_url
+    Public likes
+    Public comments
+
+    // Private Property
+    Private _post_id  // A private identifier for the post
+
+    // Constructor
+    Public Constructor(username, caption, image_url):
+        Set this.username = username
+        Set this.caption = caption
+        Set this.image_url = image_url
+        Set this.likes = 0  // Initialize likes count to 0
+        Set this.comments = []  // Initialize an empty list for comments
+        Generate a unique _post_id and assign it
+
+    // Public Methods
+    Public Function like():
+        Increment likes by 1
+
+    Public Function add_comment(comment):
+        Append the comment to the comments list
+
+    Public Function get_post_details():
+        Return username, caption, image_url, likes, comments
+
+    // Private Method
+    Private Function _generate_unique_post_id():
+        // Logic to generate a unique post ID
