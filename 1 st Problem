@@ -35,3 +35,10 @@ if count_1 < count_2:
     print(f"The number {a} has less step to reach 1" )
 else:
     print(f"The number {b} has less step to reach 1" )
+
+''' OUTPUT:
+Enter the number 1:8
+Enter the number 2:9
+The step count of 8 is: 3
+The step count of 9 is: 19
+The number 8 has less step to reach 1'''
